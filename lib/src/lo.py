@@ -1,12 +1,10 @@
 from abc import ABC, abstractmethod
-from pathlib import Path as fs
+from pathlib import Path as path
 
 class LearningObject (ABC) :
 
-    def __init__(self, parent = None):
+    def __init__(self):
         self.hide = False
-        if self.parent:
-            self.parent = parent
         self.lotype = "lo"
 
     def reap(pattern):
