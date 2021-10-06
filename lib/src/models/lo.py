@@ -21,6 +21,7 @@ class LearningObject (ABC) :
 
 def getImageFile(name):
     validImageTypes = ['png','jpg','jpeg','gif']
+    image = ''
     for type in validImageTypes:
         image = name + '.' + type
         if os.path.exists(image):
