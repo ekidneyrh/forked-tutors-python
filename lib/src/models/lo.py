@@ -41,3 +41,10 @@ def readYaml(path):
         #logging.warning(err.message)
         logging.warning('Review this file and try again....')
     return yamldata
+
+def readWholeFile(path):
+    if os.path.exists(path):
+        array = os.open(path)
+        return array
+    else:
+        logging.warning('Unable to locate ' + path)    
