@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
-from pathlib import Path as path
-import fnmatch as fn
+import fileinput
 import os
+import yaml
+import logging
 
 class LearningObject (ABC) :
 
@@ -26,4 +27,17 @@ def getImageFile(name):
             return image
 
 def getParentFolder():
-    return os.path.basename(os.path.dirname(os.getcwd))    
+    return os.path.basename(os.path.dirname(os.getcwd)) 
+
+def readYaml(path):
+    yamldata = ''
+    try:
+        yamldata = yaml.load(os.open(path, encoding='utf-8'))
+    except:
+        logging.warning('Tutors ${version} encountered an error reading properties.yaml:')
+        logging.warning('--------------------------------------------------------------')
+        #logging.warning(err.mark.buffer)
+        logging.warning('--------------------------------------------------------------')
+        #logging.warning(err.message)
+        logging.warning('Review this file and try again....')
+    return yamldata
