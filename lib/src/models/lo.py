@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
 from pathlib import Path as path
+import fnmatch as fn
+import os
 
 class LearningObject (ABC) :
 
+    lotype = "lo"
+
     def __init__(self):
         self.hide = False
-        self.lotype = "lo"
 
     def reap(pattern):
         pass
@@ -14,3 +17,10 @@ class LearningObject (ABC) :
     def publish(path):
         pass
 
+
+def getImageFile(name):
+    validImageTypes = ['png','jpg','jpeg','gif']
+    for type in validImageTypes:
+        image = name + '.' + type;
+        if fn.fnmatch(image):
+            return image
