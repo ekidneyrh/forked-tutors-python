@@ -54,7 +54,17 @@ def getHeaderFromBody(body):
     array = body.split('\n')
     header = ''
     if array[0][0] == '#':
-        header = array[0].substring(1)
+        header = array[0][0:2]
     else:
         header = array[0]
     return header           
+
+def withoutHeaderFromBody(body):
+    content = body
+    line1 = content.index('\n')
+    content = content[line1 + 1 : content.len()]
+    content = content.strip()
+    line2 = content.index('\n')
+    if line2 > -1:
+        content = content[0:line2]
+    return content    
