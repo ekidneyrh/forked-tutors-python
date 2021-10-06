@@ -24,4 +24,6 @@ def getImageFile(name):
         image = name + '.' + type
         if os.path.exists(image):
             return image
-    
+
+def getParentFolder():
+    return os.path.basename(os.path.dirname(os.getcwd))    
