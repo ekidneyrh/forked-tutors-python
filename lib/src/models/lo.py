@@ -47,4 +47,13 @@ def readWholeFile(path):
         array = os.open(path)
         return array
     else:
-        logging.warning('Unable to locate ' + path)    
+        logging.warning('Unable to locate ' + path)
+
+def getHeaderFromBody(body):
+    array = body.split('\n')
+    header = ''
+    if array[0][0] == '#':
+        header = array[0].substring(1)
+    else:
+        header = array[0]
+    return header           
