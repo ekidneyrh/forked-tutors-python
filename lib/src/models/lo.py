@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-import fileinput
 import os
 import yaml
 import logging
