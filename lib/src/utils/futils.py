@@ -2,6 +2,9 @@ import os
 import logging
 import yaml
 
+def __init__(self):
+    pass
+
 def getImageFile(name):
     validImageTypes = ['png','jpg','jpeg','gif']
     image = ''
