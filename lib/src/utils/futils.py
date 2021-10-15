@@ -4,8 +4,6 @@ import os
 import logging
 import yaml
 
-def __init__(self):
-    pass
 
 def writeFile(folder,filename,contents):
     if not os.path.exists(folder):
