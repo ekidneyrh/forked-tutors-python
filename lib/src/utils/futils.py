@@ -1,9 +1,10 @@
 from genericpath import exists
 import shutil as sh
+from os.path import isfile, join
+from os import listdir
 import os
 import logging
-import yaml
-
+from frontmatter import Frontmatter
 
 def writeFile(folder,filename,contents):
     if not os.path.exists(folder):
@@ -29,8 +30,8 @@ def getParentFolder():
     return os.path.basename(os.path.dirname(os.getcwd)) 
 
 def getDirectories(srcpath):
-    #TODO
-    pass
+    onlyfiles = [f for f in listdir(srcpath) if isfile(join(srcpath, f))]
+    return onlyfiles
 
 def verifyFolder(folder):
     if not os.path.exists(folder):
