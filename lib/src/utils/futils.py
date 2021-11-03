@@ -4,7 +4,7 @@ from os.path import isfile, join
 from os import listdir
 import os
 import logging
-from frontmatter import Frontmatter
+from frontmatter import Frontmatter as yaml
 
 def writeFile(folder,filename,contents):
     if not os.path.exists(folder):
