@@ -25,7 +25,7 @@ class LearningObject (ABC) :
  
    def __init__(self):
        self.hide = False
-       lotype = "lo"
+       self.lotype = "lo"
  
    def reap(self, pattern):
        contents = dict()
@@ -50,4 +50,3 @@ class LearningObject (ABC) :
    @abstractmethod
    def publish(path):
        pass
-
