@@ -7,11 +7,12 @@ import frontmatter as fm
 
 class LearningObject (ABC) :
 
-    lotype = "lo"
+    
 
     def __init__(self):
         self.hide = False
-
+        self.lotype = "lo"
+        
     def reap(self, pattern):
         contents = dict()
         self.folder = os.path.basename(os.getcwd)
