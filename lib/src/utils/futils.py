@@ -130,3 +130,7 @@ def withoutHeaderFromBody(body):
     if line2 > -1:
         content = content[0:line2]
     return content
+
+def initPath(path):
+    os.mkdir('-p', path)
+
